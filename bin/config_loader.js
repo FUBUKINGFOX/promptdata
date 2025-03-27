@@ -4,11 +4,14 @@ const { log_info } = require("./logger")
 
 const config = {}
 
-function load_config(){
-    const files = fs.readdirSync("./config","utf-8")
+function load_config(cfg_folder){
+    if (!cfg_folder){
+        cfg_folder = "./config"
+    }
+    const files = fs.readdirSync(cfg_folder,"utf-8")
     for(let file of files){
         if (file.endsWith(".ini") && !(file.includes("example"))){
-            config[file.replace(".ini","")] = ini.parse(fs.readFileSync(`./config/${file}`,"utf-8"))
+            config[file.replace(".ini","")] = ini.parse(fs.readFileSync(`${cfg_folder}/${file}`,"utf-8"))
             log_info(undefined,"<config>LOADER",`\x1b[94m${file} \x1b[92mloaded\x1b[0m`)
         }
     }
@@ -28,10 +31,13 @@ function get_cfg_value(file, title, key, defult_value){
     return config[file][title][key]
 }
 
-function save_config(){
+function save_config(cfg_folder){
+    if (!cfg_folder){
+        cfg_folder = "./config"
+    }
     const files = Object.keys(config)
     for(const file of files){
-        fs.writeFileSync(`./config/${file}.ini`,ini.stringify(config[file]),"utf-8")
+        fs.writeFileSync(`${cfg_folder}/${file}.ini`,ini.stringify(config[file]),"utf-8")
         log_info(undefined,"<config>LOADER",`${file}.ini \x1b[92msaved\x1b[0m`)
     }
 }

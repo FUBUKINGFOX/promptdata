@@ -5,3 +5,4 @@ package-lock.json
 !server_setting.example.ini
 !spider.example.ini
 !API.example.ini
+cookie.header.txt
