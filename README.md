@@ -20,7 +20,9 @@ npm update
 ## setting config folder
 ### Rename following file
 > API.example.ini ==> API.ini
+
 > server_setting.example.ini ==> server_setting.ini
+
 > spider.example.ini ==> spider.ini
 
 ## start the spider
