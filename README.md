@@ -1,9 +1,10 @@
 # PROMT DATA SERCHER
-A spider yo collect promt data from scholar articles
+A spider to collect promtdata from scholar articles
 
 # BUILD (Windows)
 ## install execution environment
 > [GIT](https://git-scm.com/)
+
 > [nodejs](https://nodejs.org/en)
 ## clone repositorie
 ```
