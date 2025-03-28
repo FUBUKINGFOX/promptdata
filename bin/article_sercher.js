@@ -64,10 +64,11 @@ async function articleURL_sercher(quation){
         const cookie = loadCookie()
         const header = new Headers({
             "cookie": cookie,
-            "user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+            "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
         })  
         const res = await fetch(ScholarGoogle_url(quation),{method:"GET",headers:header})
         const html = await res.text()
+        console.log(html)
         const dom = new jsdom.JSDOM(html)
         const articles = dom.window.document.getElementsByClassName("gs_rt")
         list.push(dom.window.document.getElementById("gs_ab_md").getElementsByTagName("div")[0].textContent)
