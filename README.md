@@ -2,12 +2,25 @@
 A spider to collect promtdata from scholar articles
 
 ```mermaid
-flowchart TD
+flowchart LR
     K(user)
     I[Proxy Server]
     J[LLM Server]
+    L[web spider]
+    M[SQL Server]
 
     K <--> I <--> J
+    I <--> L
+    I <--> M
+    style I fill:#00CC55, stroke:#877a71, stroke-width:2px, color:#ffffff
+    style J fill:#e9b41b, stroke:#877a71, stroke-width:2px, color:#ffffff
+    style L fill:#007CEB, stroke:#877a71, stroke-width:2px, color:#ffffff
+    style M fill:#EB0004, stroke:#877a71, stroke-width:2px, color:#ffffff
+
+```
+
+```mermaid
+flowchart TD
 
     A[前端] -->|request使用者搜尋| B[Proxy Server
     網頁 Server網頁 Server]
@@ -28,14 +41,17 @@ flowchart TD
     H --> A
 
 
-    style I fill:#00CC55, stroke:#877a71, stroke-width:2px, color:#ffffff
+    
     style B fill:#00CC55, stroke:#877a71, stroke-width:2px, color:#ffffff
     style D fill:#00CC55, stroke:#877a71, stroke-width:2px, color:#ffffff
     style H fill:#00CC55, stroke:#877a71, stroke-width:2px, color:#ffffff
 
-    style J fill:#e9b41b, stroke:#877a71, stroke-width:2px, color:#ffffff
+    
     style G fill:#e9b41b, stroke:#877a71, stroke-width:2px, color:#ffffff
 
+    style C fill:#EB0004, stroke:#877a71, stroke-width:2px, color:#ffffff
+
+    style E fill:#007CEB, stroke:#877a71, stroke-width:2px, color:#ffffff
 
     Z{抽象概念}
     Y[實體設備]
