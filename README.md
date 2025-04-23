@@ -1,6 +1,30 @@
 # PROMT DATA SERCHER
 A spider to collect promtdata from scholar articles
 
+```mermaid
+flowchart TD
+    
+    A[前端] -->|request使用者搜尋| B[Proxy Server
+    網頁 Server網頁 Server]
+    B -->|request查尋資料| C[SQL Server]
+    C -->|Feed back有無資料| B
+    B -..- |判斷|D{SQL Server 有無資料}
+    D -->|SQL Server 無資料|E[爬蟲 API Server]
+    D -->|SQL Server 有資料| A
+    E <--->|爬取資料| F[google 學術...]
+    E --> |處理成 TEXT| G[LLM Server
+    promot: 從 Text 解析輸出固定格式DATA
+    e.g. json格式]
+    G --->|整理後資料| H{整理資料
+    更新資料庫存檔}
+    H -.-|整理資料
+    判斷是否更新資料庫| B
+    H --> |更新資料庫|C
+    H --> A
+    Z{抽象概念}
+    Y[實體設備]
+```
+
 # BUILD (Windows)
 ## install execution environment
 > [GIT](https://git-scm.com/)
