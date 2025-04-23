@@ -3,7 +3,12 @@ A spider to collect promtdata from scholar articles
 
 ```mermaid
 flowchart TD
-    
+    K(user)
+    I[Proxy Server]
+    J[LLM Server]
+
+    K <--> I <--> J
+
     A[前端] -->|request使用者搜尋| B[Proxy Server
     網頁 Server網頁 Server]
     B -->|request查尋資料| C[SQL Server]
@@ -21,6 +26,17 @@ flowchart TD
     判斷是否更新資料庫| B
     H --> |更新資料庫|C
     H --> A
+
+
+    style I fill:#00CC55, stroke:#877a71, stroke-width:2px, color:#ffffff
+    style B fill:#00CC55, stroke:#877a71, stroke-width:2px, color:#ffffff
+    style D fill:#00CC55, stroke:#877a71, stroke-width:2px, color:#ffffff
+    style H fill:#00CC55, stroke:#877a71, stroke-width:2px, color:#ffffff
+
+    style J fill:#e9b41b, stroke:#877a71, stroke-width:2px, color:#ffffff
+    style G fill:#e9b41b, stroke:#877a71, stroke-width:2px, color:#ffffff
+
+
     Z{抽象概念}
     Y[實體設備]
 ```
