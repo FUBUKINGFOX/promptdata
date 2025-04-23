@@ -23,7 +23,7 @@ flowchart LR
 flowchart TD
 
     A[前端] -->|request使用者搜尋| B[Proxy Server
-    網頁 Server網頁 Server]
+    網頁 Server]
     B -->|request查尋資料| C[SQL Server]
     C -->|Feed back有無資料| B
     B -..- |判斷|D{SQL Server 有無資料}
