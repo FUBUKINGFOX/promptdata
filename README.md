@@ -9,10 +9,11 @@ flowchart LR
     L[web spider]
     M[SQL Server]
 
-    K <--> I <--> J
-    I --> L
-    L --> J
-    I <-- J
+    K <--> I
+    I <--> L
+    I <--> M
+    L <--> J
+    
 
     style I fill:#00CC55, stroke:#877a71, stroke-width:2px, color:#ffffff
     style J fill:#e9b41b, stroke:#877a71, stroke-width:2px, color:#ffffff
