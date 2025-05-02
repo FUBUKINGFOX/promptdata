@@ -12,6 +12,7 @@ flowchart LR
     K <--> I <--> J
     I <--> L
     I <--> M
+    
     style I fill:#00CC55, stroke:#877a71, stroke-width:2px, color:#ffffff
     style J fill:#e9b41b, stroke:#877a71, stroke-width:2px, color:#ffffff
     style L fill:#007CEB, stroke:#877a71, stroke-width:2px, color:#ffffff
